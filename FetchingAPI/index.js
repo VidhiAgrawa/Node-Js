@@ -34,6 +34,13 @@ app.put( "/:id", ( req, res ) => {
     data[index] = { id, title, userId , completed }
     res.send( " data putted" )
 } )
+app.patch( "/", ( req, res ) => {
+    const id = req.params.id
+    const { title } = req.body
+    const index = data.findIndex( ( v ) => v.id == id )
+    data[index] = { title }
+    res.send( " data patched" )
+} )
 app.delete( "/:id", ( req, res ) => {
     const id = parseInt(req.params.id)
     data = data.filter( ( v, i ) => i != id )
