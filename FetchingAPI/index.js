@@ -12,8 +12,6 @@ let data = [];
         const url = await fetch("https://jsonplaceholder.typicode.com/todos")
         const api = await url.json()
         data = api
-
-        
     } catch (err) {
         console.log(err)
     }
